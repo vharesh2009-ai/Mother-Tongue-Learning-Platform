@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SIH26042 – Mother-tongue learning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Tamil:wght@400;600&family=Noto+Sans+Malayalam:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff7e8;--panel:#fff;--ink:#22244a;--muted:#5f6384;--line:#eadfca;--indigo:#3b3fa8;--pink:#c42862;--saffron:#ff9f1c;--teal:#0b7f70;--sky:#2a8fe0;--warn:#7a4300;--warnbg:#ffe7b3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171833;--panel:#232552;--ink:#f4f1ff;--muted:#b4b7e0;--line:#3a3d78;--warn:#ffe2a0;--warnbg:#4a3512}}
+:root[data-theme="dark"]{--bg:#171833;--panel:#232552;--ink:#f4f1ff;--muted:#b4b7e0;--line:#3a3d78;--warn:#ffe2a0;--warnbg:#4a3512}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:"Baloo 2",Nunito,sans-serif;line-height:1.15;margin:0}
+[lang="hi"]{font-family:"Noto Sans Devanagari",Nunito,sans-serif}
+[lang="ta"]{font-family:"Noto Sans Tamil",Nunito,sans-serif}
+[lang="ml"]{font-family:"Noto Sans Malayalam",Nunito,sans-serif}
+.band{background:linear-gradient(120deg,var(--indigo),var(--pink) 60%,var(--saffron));color:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:600;flex-wrap:wrap}
+.top .r{display:flex;gap:8px;align-items:center}
+button,select,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border-radius:999px;border:2px solid var(--line);background:var(--panel);padding:8px 16px;font-weight:700}
+button.main{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+button.pink{background:var(--pink);color:#fff;border-color:var(--pink)}
+button.ghost{background:rgba(255,255,255,.18);color:#fff;border-color:rgba(255,255,255,.6)}
+button:disabled{opacity:.5;cursor:not-allowed}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--saffron);outline-offset:2px}
+input,select,textarea{width:100%;background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:10px 12px}
+label{display:block;font-weight:700;margin:12px 0 5px}
+.hero{padding:30px 0 56px}
+.gl{display:flex;gap:10px;margin-bottom:16px}
+.gl span{width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,.18);display:grid;place-items:center;font-size:1.9rem;font-weight:600}
+.hero h1{font-size:clamp(2.1rem,7vw,3.4rem);max-width:14em}
+.hero p{max-width:36em;margin:14px 0 0;opacity:.95}
+.card{background:var(--panel);border:2px solid var(--line);border-radius:18px;padding:22px}
+.login{max-width:430px;margin:-36px auto 0}
+.demo{background:var(--warnbg);color:var(--warn);border-radius:12px;padding:12px 14px;margin:14px 0;font-size:.95rem}
+.demo code{font-weight:700}
+.err{color:var(--pink);font-weight:700;min-height:1.5em;margin-top:8px}
+.pw{display:flex;gap:8px}.pw button{white-space:nowrap}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}.row>div{flex:1 1 170px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 14px}
+.tabs button[aria-selected="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}
+.pillbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 14px;font-weight:700}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pills button[aria-pressed="true"]{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
+.chips button{padding:4px 12px;font-size:.92rem;border-color:var(--saffron)}
+.out{margin-top:16px;padding:14px;border-radius:14px;background:var(--bg);border:2px dashed var(--sky);min-height:90px}
+.out .big{font-size:1.7rem;line-height:1.4}.tag,.no{color:var(--muted);font-size:.92rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.les{border-top:8px solid var(--c)}
+.les ul{list-style:none;padding:0;margin:10px 0 14px}
+.les li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:4px 0;border-bottom:1px dotted var(--line)}
+.les .btns{display:flex;gap:8px;flex-wrap:wrap}
+.les button.done{background:var(--c);color:#fff;border-color:var(--c)}
+.spk{padding:0 8px;margin-left:6px;font-size:.9rem;line-height:1.6}
+.qw{font-family:"Baloo 2",sans-serif;font-size:2.4rem;line-height:1.2;margin:8px 0}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:14px 0}
+.opt{font-size:1.25rem;border-radius:14px;padding:12px;text-align:center}
+.opt:disabled{opacity:.8}
+.opt.good{background:var(--teal);color:#fff;border-color:var(--teal);opacity:1}
+.opt.bad{background:var(--pink);color:#fff;border-color:var(--pink);opacity:1}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:14px 0}
+.stat{border-radius:16px;padding:14px;color:#fff;font-weight:700}
+.stat b{display:block;font-family:"Baloo 2",sans-serif;font-size:2rem;line-height:1.1}
+.bar{height:16px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--saffron),var(--pink))}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line)}
+.ok{color:var(--teal);font-weight:700}
+[hidden]{display:none!important}
+footer{text-align:center;color:var(--muted);font-size:.9rem;padding:28px 0}
+@media(prefers-reduced-motion:no-preference){.bar i{transition:width .5s}}
+</style>
+</head>
+<body>
+<div class="band"><div class="wrap">
+  <div class="top"><span>SIH26042 · Smart India Hackathon 2026</span>
+    <span class="r"><span id="who" hidden></span><button class="ghost" id="logout" type="button" hidden>Log out</button><button class="ghost" id="theme" type="button" aria-label="Switch light or dark theme">Theme</button></span></div>
+  <div class="hero"><div class="gl" aria-hidden="true"><span lang="hi">अ</span><span lang="ta">அ</span><span lang="ml">അ</span></div>
+  <h1>Children learn best in the language they speak at home</h1>
+  <p>Type any word or lesson line and see it in Hindi, Tamil or Malayalam. Hear it spoken, practise it, and track each child’s progress.</p></div>
+</div></div>
+
+<main class="wrap">
+<section id="loginView" class="card login" aria-labelledby="lh">
+  <h2 id="lh">Log in</h2>
+  <div class="demo" role="note">Demo account only. This login runs in your browser and checks nothing on a server.<br>Email: <code>demo@sih26042.in</code> · Password: <code>demo123</code></div>
+  <label for="email">Email</label><input id="email" type="email" autocomplete="username">
+  <label for="pass">Password</label>
+  <div class="pw"><input id="pass" type="password" autocomplete="current-password"><button id="eye" type="button">Show</button></div>
+  <label for="role">Log in as</label>
+  <select id="role"><option>Teacher</option><option>Student</option></select>
+  <div class="err" id="err" role="alert"></div>
+  <div class="row" style="margin-top:6px"><button class="main" id="login" type="button">Log in</button><button class="pink" id="fill" type="button">Use demo account</button></div>
+</section>
+
+<section id="appView" hidden>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-t="tr">Translator</button>
+    <button role="tab" aria-selected="false" data-t="le">Lessons</button>
+    <button role="tab" aria-selected="false" data-t="pr">Practice</button>
+    <button role="tab" aria-selected="false" data-t="pg">Progress</button>
+    <button role="tab" aria-selected="false" data-t="la">Languages</button>
+  </div>
+  <div id="lp" class="pillbar" hidden><span>Learn in</span><span class="pills" id="pills"></span></div>
+
+  <div id="tr" class="card">
+    <h2>Translator</h2>
+    <div class="demo">Common lesson words and phrases come from the built-in vocabulary. Any other word or sentence is translated live by Claude. Ask a teacher to check results before using them in class.</div>
+    <div class="row">
+      <div><label for="from">From</label><select id="from"></select></div>
+      <div style="flex:0 0 auto"><button id="swap" type="button" aria-label="Swap languages">⇄ Swap</button></div>
+      <div><label for="to">To</label><select id="to"></select></div>
+    </div>
+    <label for="src">Word or lesson line</label><textarea id="src" rows="3" placeholder="Type any word or sentence. Press Ctrl+Enter to translate."></textarea>
+    <div class="chips" id="chips" role="group" aria-label="Sample phrases"></div>
+    <button class="main" id="go" type="button">Translate</button> <button id="say" type="button" disabled>🔊 Listen</button> <button id="cp" type="button" disabled>Copy</button> <button class="pink" id="mic" type="button">🎤 Speak</button>
+    <div class="no" id="micmsg" role="status" style="margin-top:8px"></div>
+    <div class="out" id="out" aria-live="polite"><span class="no">The translation will appear here.</span></div>
+  </div>
+
+  <div id="le" hidden><div class="grid" id="lessons"></div></div>
+
+  <div id="pr" class="card" hidden>
+    <h2>Practice</h2>
+    <p class="no">Pick the correct translation of the English word.</p>
+    <div class="qw" id="qw"></div>
+    <div class="opts" id="opts"></div>
+    <div id="fb" role="status" style="font-weight:700;min-height:1.6em"></div>
+    <button class="main" id="nx" type="button" hidden>Next word</button>
+  </div>
+
+  <div id="pg" class="card" hidden>
+    <h2>Progress</h2><p class="no">Saved on this device. Completed lessons and practice answers carry over when you return.</p>
+    <div class="stats">
+      <div class="stat" style="background:var(--indigo)"><b id="s1">0</b>lessons done</div>
+      <div class="stat" style="background:var(--pink)"><b id="s2">0</b>words learned</div>
+      <div class="stat" style="background:var(--teal)"><b id="s3">–</b>practice accuracy</div>
+      <div class="stat" style="background:#b45f00"><b id="s4">0</b>best streak</div>
+    </div>
+    <div class="bar" role="progressbar" aria-label="Course progress" aria-valuemin="0" aria-valuemax="100" id="pb"><i id="pf"></i></div>
+    <p class="no" id="pt"></p>
+    <button id="rs" type="button">Reset progress</button>
+  </div>
+
+  <div id="la" class="card" hidden>
+    <h2>Language status</h2>
+    <div class="scroll"><table><thead><tr><th>Language</th><th>Lessons and translation</th><th>Speech</th></tr></thead><tbody>
+      <tr><td>English</td><td class="ok">Source language</td><td>Browser voice, if installed</td></tr>
+      <tr><td>Hindi</td><td class="ok">Built-in lessons + live translation</td><td>Browser voice, if installed</td></tr>
+      <tr><td>Tamil</td><td class="ok">Built-in lessons + live translation</td><td>Browser voice, if installed</td></tr>
+      <tr><td>Malayalam</td><td class="ok">Built-in lessons + live translation</td><td>Browser voice, if installed</td></tr>
+      <tr><td>Santhali</td><td class="no">Planned, not tested</td><td class="no">Not available</td></tr>
+      <tr><td>Ho</td><td class="no">Planned, not tested</td><td class="no">Not available</td></tr>
+      <tr><td>Mundari</td><td class="no">Planned, not tested</td><td class="no">Not available</td></tr></tbody></table></div>
+    <p class="no">Some devices have no Tamil or Malayalam voice installed, so 🔊 can be silent there. Live translations are machine-generated and need a teacher’s review. A language is marked supported only after its translation and speech pass testing.</p>
+  </div>
+</section>
+<footer>SIH26042 prototype · demo login · progress is stored on this device</footer>
+</main>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var K=["en","hi","ta","ml"],N={en:"English",hi:"Hindi",ta:"Tamil",ml:"Malayalam"},V={en:"en-IN",hi:"hi-IN",ta:"ta-IN",ml:"ml-IN"};
+var L=[
+{n:"Greetings",c:"#3b3fa8",w:[["Hello","नमस्ते","வணக்கம்","നമസ്കാരം"],["Good morning","सुप्रभात","காலை வணக்கம்","സുപ്രഭാതം"],["Thank you","धन्यवाद","நன்றி","നന്ദി"],["Please","कृपया","தயவுசெய்து","ദയവായി"],["Goodbye","अलविदा","பிரியாவிடை","വിട"],["Welcome","स्वागत है","நல்வரவு","സ്വാഗതം"]]},
+{n:"Numbers 1 to 10",c:"#c42862",w:[["One","एक","ஒன்று","ഒന്ന്"],["Two","दो","இரண்டு","രണ്ട്"],["Three","तीन","மூன்று","മൂന്ന്"],["Four","चार","நான்கு","നാല്"],["Five","पाँच","ஐந்து","അഞ്ച്"],["Six","छह","ஆறு","ആറ്"],["Seven","सात","ஏழு","ഏഴ്"],["Eight","आठ","எட்டு","എട്ട്"],["Nine","नौ","ஒன்பது","ഒമ്പത്"],["Ten","दस","பத்து","പത്ത്"]]},
+{n:"Classroom",c:"#0b7f70",w:[["Book","किताब","புத்தகம்","പുസ്തകം"],["Teacher","शिक्षक","ஆசிரியர்","അധ്യാപകൻ"],["Student","छात्र","மாணவர்","വിദ്യാർത്ഥി"],["School","स्कूल","பள்ளி","സ്കൂൾ"],["Pen","कलम","பேனா","പേന"],["Pencil","पेंसिल","பென்சில்","പെൻസിൽ"]]},
+{n:"Family",c:"#7b3fa8",w:[["Mother","माँ","அம்மா","അമ്മ"],["Father","पिता","அப்பா","അച്ഛൻ"],["Brother","भाई","சகோதரன்","സഹോദരൻ"],["Sister","बहन","சகோதரி","സഹോദരി"],["Grandmother","दादी","பாட்டி","മുത്തശ്ശി"],["Grandfather","दादा","தாத்தா","മുത്തച്ഛൻ"]]},
+{n:"Colours",c:"#1c6fb8",w:[["Red","लाल","சிவப்பு","ചുവപ്പ്"],["Blue","नीला","நீலம்","നീല"],["Green","हरा","பச்சை","പച്ച"],["Yellow","पीला","மஞ்சள்","മഞ്ഞ"],["White","सफ़ेद","வெள்ளை","വെള്ള"],["Black","काला","கருப்பு","കറുപ്പ്"]]},
+{n:"Everyday words",c:"#b45f00",w:[["Water","पानी","தண்ணீர்","വെള്ളം"],["Food","खाना","உணவு","ഭക്ഷണം"],["Home","घर","வீடு","വീട്"],["Sun","सूरज","சூரியன்","സൂര്യൻ"],["Tree","पेड़","மரம்","മരം"],["Flower","फूल","பூ","പൂവ്"]]},
+{n:"Animals",c:"#4d7a12",w:[["Dog","कुत्ता","நாய்","നായ"],["Cat","बिल्ली","பூனை","പൂച്ച"],["Cow","गाय","பசு","പശു"],["Bird","चिड़िया","பறவை","പക്ഷി"],["Elephant","हाथी","யானை","ആന"],["Fish","मछली","மீன்","മീൻ"]]}];
+var P=[["How are you?","आप कैसे हैं?","நீங்கள் எப்படி இருக்கிறீர்கள்?","സുഖമാണോ?"],["What is your name?","आपका नाम क्या है?","உங்கள் பெயர் என்ன?","നിങ്ങളുടെ പേര് എന്താണ്?"],["Please sit down","कृपया बैठ जाइए","தயவுசெய்து உட்காருங்கள்","ദയവായി ഇരിക്കൂ"],["Open your book","अपनी किताब खोलिए","உங்கள் புத்தகத்தைத் திறங்கள்","നിങ്ങളുടെ പുസ്തകം തുറക്കൂ"],["Let us read together","आइए साथ मिलकर पढ़ें","வாருங்கள், சேர்ந்து படிப்போம்","നമുക്ക് ഒരുമിച്ച് വായിക്കാം"],["Well done!","शाबाश!","நன்றாகச் செய்தீர்கள்!","നന്നായി ചെയ്തു!"]];
+var W=[];L.forEach(function(l){l.w.forEach(function(w){W.push(w)})});
+var ALL=W.concat(P);
+var S={done:{},ok:0,tot:0,run:0,best:0,lang:"ta"};
+try{Object.assign(S,JSON.parse(localStorage.getItem("sih26042v2")||"{}"))}catch(e){}
+function save(){try{localStorage.setItem("sih26042v2",JSON.stringify(S))}catch(e){}}
+function el(t,c,x,l){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;if(l)e.lang=l;return e}
+function say(t,l,q){try{var u=new SpeechSynthesisUtterance(t);u.lang=V[l];if(!q)speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+function sp(t,l){var b=el("button","spk","🔊");b.type="button";b.setAttribute("aria-label","Listen to "+t);b.onclick=function(){say(t,l)};return b}
+var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+var norm=function(s){return s.trim().toLowerCase().replace(/[.!?।,]+$/,"").replace(/\s+/g," ")};
+
+/* login */
+var OK={email:"demo@sih26042.in",pass:"demo123"};
+function show(app,name){$("loginView").hidden=app;$("appView").hidden=!app;$("logout").hidden=!app;$("who").hidden=!app;if(app)$("who").textContent=name}
+function login(){var e=$("email").value.trim().toLowerCase(),p=$("pass").value;
+if(e===OK.email&&p===OK.pass){$("err").textContent="";var n=$("role").value+" (demo)";try{sessionStorage.setItem("sih26042","1:"+n)}catch(x){}show(true,n)}
+else $("err").textContent="Email or password is wrong. Use the demo account shown above."}
+$("login").onclick=login;
+$("pass").onkeydown=function(e){if(e.key==="Enter")login()};
+$("fill").onclick=function(){$("email").value=OK.email;$("pass").value=OK.pass;login()};
+$("eye").onclick=function(){var t=$("pass").type==="password";$("pass").type=t?"text":"password";$("eye").textContent=t?"Hide":"Show"};
+$("logout").onclick=function(){try{sessionStorage.removeItem("sih26042")}catch(x){}$("pass").value="";show(false)};
+try{var ss=sessionStorage.getItem("sih26042");if(ss&&ss.indexOf("1:")===0)show(true,ss.slice(2))}catch(x){}
+
+/* tabs and learning language */
+var T=["tr","le","pr","pg","la"];
+document.querySelectorAll(".tabs button").forEach(function(b){b.onclick=function(){
+document.querySelectorAll(".tabs button").forEach(function(o){o.setAttribute("aria-selected",o===b)});
+T.forEach(function(id){$(id).hidden=id!==b.dataset.t});$("lp").hidden=b.dataset.t!=="le"&&b.dataset.t!=="pr"}});
+var pl=$("pills");
+function pillSync(){pl.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.k===S.lang)})}
+["hi","ta","ml"].forEach(function(k){var b=el("button",0,N[k]);b.type="button";b.dataset.k=k;b.onclick=function(){S.lang=k;save();pillSync();renderLessons();ask()};pl.appendChild(b)});
+
+/* translator */
+K.forEach(function(k){["from","to"].forEach(function(id){var o=el("option",0,N[k]);o.value=k;$(id).appendChild(o)})});
+$("from").value="en";$("to").value=S.lang;
+function fl(){$("src").lang=$("from").value}
+$("from").onchange=fl;
+function find(t,f,to){var n=norm(t),i=K.indexOf(f),j=K.indexOf(to);for(var x=0;x<ALL.length;x++)if(norm(ALL[x][i])===n)return ALL[x][j];return null}
+var last="",lastTo="ta",tok=0,smp;
+function getSmp(){if(!smp)smp=(window.claude&&window.claude.use?window.claude.use("sample"):Promise.resolve(null)).catch(function(){return null});return smp}
+function msg(o,m){o.textContent="";o.appendChild(el("span","no",m))}
+async function run(){
+var f=$("from").value,to=$("to").value,t=$("src").value.trim(),o=$("out"),my=++tok;
+last="";$("say").disabled=true;$("cp").disabled=true;
+if(f===to)return msg(o,"Choose two different languages.");
+if(!t)return msg(o,"Enter a word or phrase first.");
+var r=find(t,f,to),pr="",nt="",how="Built-in vocabulary";
+if(r===null){
+  var sm=await getSmp();if(my!==tok)return;
+  if(!sm)return msg(o,"This text is not in the built-in vocabulary. Live translation of any word works in the published version of this page.");
+  msg(o,"Translating…");
+  try{var j=await sm.json('Translate from '+N[f]+' to '+N[to]+' for a school lesson. Text: '+JSON.stringify(t)+'. Reply with JSON only: {"translation":"","pronunciation":"","note":""}. Use the natural spoken form. "pronunciation" is a Latin-letter reading of the translation, empty if the target is English. "note" is one short usage tip, or empty.',{modelTier:"quick"});
+    if(my!==tok)return;r=String(j.translation||"").trim();pr=j.pronunciation||"";nt=j.note||"";how="Live translation by Claude · ask a teacher to verify";if(!r)throw 0}
+  catch(e){if(my!==tok)return;return msg(o,e&&e.code==="not_granted"?"Live translation needs your permission. Press Translate again and allow it.":e&&e.code==="rate_limited"?"Too many requests. Wait a moment and try again.":"Live translation failed. Check your connection and try again.")}
+}
+o.textContent="";o.appendChild(el("div","big",r,to));
+if(pr)o.appendChild(el("div","tag",pr));
+if(nt)o.appendChild(el("div","tag",nt));
+o.appendChild(el("div","tag",how));
+last=r;lastTo=to;$("cp").disabled=false;if("speechSynthesis" in window)$("say").disabled=false}
+P.concat(W.slice(0,3)).forEach(function(p){var b=el("button",0,p[0]);b.type="button";b.onclick=function(){$("from").value="en";if($("to").value==="en")$("to").value=S.lang;fl();$("src").value=p[0];run()};$("chips").appendChild(b)});
+$("go").onclick=run;
+$("src").onkeydown=function(e){if(e.key==="Enter"&&(e.ctrlKey||e.metaKey)){e.preventDefault();run()}};
+$("swap").onclick=function(){var f=$("from"),t=$("to"),x=f.value;f.value=t.value;t.value=x;fl();if(last){$("src").value=last;run()}};
+$("say").onclick=function(){say(last,lastTo)};
+$("cp").onclick=function(){var m=$("micmsg"),bad="Copy is blocked here. Select the text and copy it.";try{navigator.clipboard.writeText(last).then(function(){m.textContent="Copied."},function(){m.textContent=bad})}catch(e){m.textContent=bad}};
+$("mic").onclick=function(){var m=$("micmsg");if(!SR){m.textContent="Voice input is not supported in this browser. Type your text instead.";return}
+try{var r=new SR();r.lang=V[$("from").value];m.textContent="Listening…";
+r.onresult=function(e){$("src").value=e.results[0][0].transcript;m.textContent="";run()};
+r.onerror=function(){m.textContent="Could not hear you. Allow microphone access and try again, or type your text."};
+r.onend=function(){if(m.textContent==="Listening…")m.textContent=""};r.start()}catch(x){m.textContent="Voice input could not start. Type your text instead."}};
+
+/* lessons */
+function renderLessons(){var g=$("lessons"),lg=S.lang,j=K.indexOf(lg);g.textContent="";
+L.forEach(function(l,i){var c=el("div","card les");c.style.setProperty("--c",l.c);
+var u=el("ul");l.w.forEach(function(w){var li=el("li"),a=el("span",0,w[0]),b=el("span",0,w[j],lg);a.appendChild(sp(w[0],"en"));b.appendChild(sp(w[j],lg));li.appendChild(a);li.appendChild(b);u.appendChild(li)});
+var bx=el("div","btns"),pa=el("button",0,"▶ Play all");pa.type="button";
+pa.onclick=function(){try{speechSynthesis.cancel()}catch(e){}l.w.forEach(function(w){say(w[0],"en",1);say(w[j],lg,1)})};
+var bt=el("button",S.done[i]?"done":0,S.done[i]?"Completed ✓":"Mark as done");bt.type="button";
+bt.onclick=function(){S.done[i]=!S.done[i];save();renderLessons();stats()};
+bx.appendChild(pa);bx.appendChild(bt);
+c.appendChild(el("h3",0,l.n));c.appendChild(el("p","no",l.w.length+" words in "+N[lg]));c.appendChild(u);c.appendChild(bx);g.appendChild(c)})}
+
+/* practice */
+var cur=null;
+function pick(){return W[Math.floor(Math.random()*W.length)]}
+function ask(){var lg=S.lang,j=K.indexOf(lg),w=pick(),opts=[w];
+while(opts.length<4){var x=pick();if(opts.indexOf(x)<0&&x[j]!==w[j])opts.push(x)}
+opts.sort(function(){return Math.random()-.5});cur={done:0};
+$("qw").textContent=w[0];$("fb").textContent="";$("nx").hidden=true;var box=$("opts");box.textContent="";
+opts.forEach(function(o){var b=el("button","opt",o[j],lg);b.type="button";b._o=o;
+b.onclick=function(){if(cur.done)return;cur.done=1;S.tot++;var right=o===w;
+if(right){S.ok++;S.run++;S.best=Math.max(S.best,S.run)}else S.run=0;
+box.querySelectorAll("button").forEach(function(x){x.disabled=true;if(x._o===w)x.classList.add("good")});if(!right)b.classList.add("bad");
+$("fb").textContent=right?"Correct! Streak: "+S.run:"Not quite. The answer is "+w[j]+".";
+save();stats();$("nx").hidden=false;say(w[j],lg)};
+box.appendChild(b)})}
+$("nx").onclick=ask;
+
+/* progress */
+function stats(){var n=0,w=0;L.forEach(function(l,i){if(S.done[i]){n++;w+=l.w.length}});
+var pct=Math.round(n/L.length*100);
+$("s1").textContent=n+"/"+L.length;$("s2").textContent=w;$("s3").textContent=S.tot?Math.round(S.ok/S.tot*100)+"%":"–";$("s4").textContent=S.best;
+$("pf").style.width=pct+"%";$("pb").setAttribute("aria-valuenow",pct);$("pt").textContent=pct+"% of lessons complete · "+S.tot+" practice answers"}
+$("rs").onclick=function(){S.done={};S.ok=S.tot=S.run=S.best=0;save();renderLessons();stats();ask()};
+
+$("theme").onclick=function(){var r=document.documentElement,dk=r.getAttribute("data-theme")==="dark"||(r.getAttribute("data-theme")!=="light"&&matchMedia("(prefers-color-scheme:dark)").matches);r.setAttribute("data-theme",dk?"light":"dark")};
+fl();pillSync();renderLessons();stats();ask();
+})();
+</script>
+</body>
+</html>
